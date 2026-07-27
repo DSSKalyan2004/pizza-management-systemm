@@ -1,0 +1,331 @@
+/* ============================================================
+   PizzaHub design tokens — wood-fired pizzeria x e-commerce
+   ============================================================ */
+:root {
+  --crust: #2b1b12;        /* wood-fired crust brown — nav, footer, text */
+  --crust-soft: #4a3323;    /* lighter crust for borders/hovers */
+  --sauce: #c1272d;        /* tomato sauce red — primary CTA */
+  --sauce-dark: #9c1f24;
+  --basil: #5b7b4f;        /* basil green — secondary, success, available */
+  --basil-dark: #47613e;
+  --cheese: #e3a63e;       /* melted cheese gold — ratings, price tag, badges */
+  --cheese-dark: #c98a25;
+  --semolina: #f7f2e9;     /* flour/dough — page background */
+  --paper: #fffdf9;        /* card background */
+  --ink: #2b1b12;
+  --ink-muted: #75655a;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", -apple-system, Segoe UI, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius: 14px;
+  --shadow-soft: 0 4px 16px rgba(43, 27, 18, 0.08);
+  --shadow-lift: 0 14px 30px rgba(43, 27, 18, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--semolina);
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--crust);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------- Navbar ---------- */
+.ph-navbar {
+  background: var(--crust);
+  box-shadow: var(--shadow-soft);
+}
+
+.ph-navbar .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--semolina) !important;
+  letter-spacing: 0.3px;
+}
+
+.ph-navbar .nav-link {
+  color: rgba(247, 242, 233, 0.85) !important;
+  font-weight: 500;
+  font-size: 0.98rem;
+}
+
+.ph-navbar .nav-link.active {
+  color: var(--cheese) !important;
+  font-weight: 700;
+}
+
+.ph-search {
+  max-width: 420px;
+}
+
+.ph-search input {
+  border-radius: 999px 0 0 999px;
+  border: none;
+  padding-left: 1.1rem;
+}
+
+.ph-search button {
+  border-radius: 0 999px 999px 0;
+  background: var(--cheese);
+  border: none;
+  color: var(--crust);
+  font-weight: 600;
+  padding: 0 1rem;
+}
+
+.ph-cart-btn {
+  position: relative;
+  background: var(--cheese);
+  border: none;
+  color: var(--crust);
+  font-weight: 700;
+}
+
+.ph-cart-btn:hover {
+  background: var(--cheese-dark);
+  color: var(--crust);
+}
+
+.ph-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--sauce);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid var(--crust);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-danger, .btn-ph-primary {
+  background: var(--sauce);
+  border-color: var(--sauce);
+}
+
+.btn-danger:hover, .btn-ph-primary:hover {
+  background: var(--sauce-dark);
+  border-color: var(--sauce-dark);
+}
+
+.btn-outline-danger {
+  color: var(--sauce);
+  border-color: var(--sauce);
+}
+
+.btn-outline-danger:hover {
+  background: var(--sauce);
+  border-color: var(--sauce);
+}
+
+.btn-ph-secondary {
+  background: var(--basil);
+  border-color: var(--basil);
+  color: #fff;
+}
+
+.btn-ph-secondary:hover {
+  background: var(--basil-dark);
+  border-color: var(--basil-dark);
+  color: #fff;
+}
+
+.btn-warning {
+  background: var(--cheese) !important;
+  border-color: var(--cheese) !important;
+  color: var(--crust) !important;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  background: var(--paper);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card.ph-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+.ph-product-card {
+  box-shadow: var(--shadow-soft);
+  overflow: visible;
+  position: relative;
+}
+
+/* price tag sticker — signature detail on product cards */
+.ph-price-tag {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  background: var(--cheese);
+  color: var(--crust);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transform: rotate(4deg);
+  box-shadow: 0 4px 10px rgba(43, 27, 18, 0.25);
+  z-index: 2;
+  font-size: 0.95rem;
+}
+
+.ph-stars {
+  color: var(--cheese-dark);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.ph-rating-count {
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+}
+
+/* ---------- Hero ---------- */
+.ph-hero {
+  background: linear-gradient(135deg, var(--crust) 0%, #3d2818 100%);
+  color: var(--semolina);
+}
+
+.ph-hero h1 {
+  color: var(--semolina);
+}
+
+.ph-hero .ph-accent {
+  color: var(--cheese);
+}
+
+/* ---------- Ticket stub — signature element for cart/orders ---------- */
+.ph-ticket {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  padding-bottom: 22px;
+}
+
+.ph-ticket::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+  background-image: radial-gradient(circle at 10px 0, var(--semolina) 6px, transparent 7px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+}
+
+.ph-order-id {
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+.ph-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ph-status-placed { background: rgba(227,166,62,0.2); color: var(--cheese-dark); }
+.ph-status-progress { background: rgba(91,123,79,0.18); color: var(--basil-dark); }
+.ph-status-delivered { background: rgba(91,123,79,0.28); color: var(--basil-dark); }
+.ph-status-default { background: rgba(43,27,18,0.08); color: var(--ink-muted); }
+
+/* ---------- Filters sidebar ---------- */
+.ph-filters {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
+}
+
+.ph-filters h6 {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.6px;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+/* ---------- Misc ---------- */
+.ph-price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--basil-dark);
+}
+
+.ph-footer {
+  background: var(--crust);
+  color: rgba(247, 242, 233, 0.85);
+}
+
+.ph-footer h4, .ph-footer h5 {
+  color: var(--semolina);
+}
+
+.ph-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ink-muted);
+}
+
+.ph-qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(43,27,18,0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ph-qty-stepper button {
+  border: none;
+  background: var(--semolina);
+  width: 32px;
+  height: 32px;
+  font-weight: 700;
+  color: var(--crust);
+}
+
+.ph-qty-stepper span {
+  min-width: 32px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
