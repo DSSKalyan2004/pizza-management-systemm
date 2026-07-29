@@ -18,7 +18,7 @@ import com.example.Pizza.Pratice.service.CustomerService;
 
 @RestController
 @RequestMapping("/customers")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin("*")
 public class CustomerController {
 
     @Autowired
